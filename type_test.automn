@@ -1,0 +1,2 @@
+Model
+    field: str | YES, NO | [FOO,BAR]

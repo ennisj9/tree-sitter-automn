@@ -1,0 +1,67 @@
+===
+Atomic type
+===
+Model
+    field: str
+
+---
+(source_file
+    (model
+        (name)
+        (indent)
+        (field
+            (name) (type (atomic_type))
+        )
+        (dedent)
+    )
+)
+===
+Union with atomic and inline enum
+===
+Model
+    field: str | YES, NO
+
+---
+(source_file
+    (model
+        (name)
+        (indent)
+        (field
+            (name)
+            (type
+                (type_union
+                    (atomic_type) (inline_enum
+                        (variant) (variant)
+                    )
+                )
+            )
+        )
+        (dedent)
+    )
+)
+===
+Nested array of types
+===
+Model
+    field: [ red | blue | [ int] ]
+
+---
+(source_file
+    (model
+        (name)
+        (indent)
+        (field
+            (name)
+            (type
+                (array_of_type
+                    (type_union
+                        (atomic_type)
+                        (atomic_type)
+                        (array_of_type (atomic_type))
+                    )
+                )
+            )
+        )
+        (dedent)
+    )
+)
