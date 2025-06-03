@@ -26,6 +26,7 @@ module.exports = grammar({
       ),
     _model_child_definition: ($) => choice($.field),
     field: ($) => seq($.name, optional($._type_declaration)),
+    /** TYPES */
     _type_declaration: ($) => seq(":", $.type),
     type: ($) => $._any_type,
     _any_type: ($) =>
