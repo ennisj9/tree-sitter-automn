@@ -12,7 +12,9 @@
 (dynamic_field_name) @variable.parameter
 (symbol) @constant
 (string) @string
-(path_literal) @string.special.path
+(template ("`") @string)
+(template_string_fragment) @string
+(template_escape_sequence) @string.escape
 (null) @keyword
 (tag) @tag
 (property_key) @property
@@ -23,7 +25,7 @@
 ] @keyword
 (number) @number
 (open_caret) @punctuation.bracket
-(path_open_caret) @punctuation.bracket
+(template_open_caret) @punctuation.bracket
 (close_caret) @punctuation.bracket
 (close_caret_operator) @operator
 (right_arrow) @operator
@@ -45,7 +47,6 @@
 ")"
 ] @punctuation.bracket
 [
-"!"
 ">>"
 "/"
 "&"
