@@ -8,7 +8,7 @@
 (return_field (identifier) @variable.special)
 (atomic_type (identifier) @type)
 (variant_identifier) @variant
-(context_type) @variable.parameter
+(context_type) @variable.special
 (dynamic_field_name) @variable.parameter
 (symbol) @constant
 (string) @string

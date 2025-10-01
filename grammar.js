@@ -63,7 +63,7 @@ module.exports = grammar({
         $._type_declaration,
         $._example_declaration,
         $._literal_declaration,
-        seq(":", $.context_type, ":", $.type),
+        $._tagged_type_declaration,
       ),
     _dynamic_field: ($) =>
       seq(
@@ -110,7 +110,7 @@ module.exports = grammar({
     _enum_body: ($) =>
       seq(
         $.indent,
-        choice($.variant, $._describer),
+        choice($.variant, $._describer, $._tagged_type_declaration),
         repeat(seq($.newline, choice($.variant, $._describer))),
         $.dedent,
       ),
@@ -146,6 +146,7 @@ module.exports = grammar({
     tag: ($) => identifier,
     /** TYPES */
     _type_declaration: ($) => seq(choice(":", seq("?", optional(":"))), $.type),
+    _tagged_type_declaration: ($) => seq(":", $.context_type, ":", $.type),
     type: ($) => $._any_type,
     atomic_type: ($) =>
       seq(
@@ -257,5 +258,6 @@ module.exports = grammar({
     symbol: ($) => identifier,
     identifier: ($) => identifier,
     variant_identifier: ($) => prec(1, identifier),
+    type_tag: ($) => identifier,
   },
 });
