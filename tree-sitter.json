@@ -6,9 +6,8 @@
       "camelcase": "automn",
       "title": "automn",
       "scope": "source.automn",
-      "file-types": [
-        ".automn"
-      ],
+      "file-types": ["automn"],
+      "highlights": "queries/highlights.scm",
       "injection-regex": "^automn$",
       "class-name": "TreeSitterAutomn"
     }
