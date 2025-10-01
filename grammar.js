@@ -212,15 +212,28 @@ module.exports = grammar({
           ),
         ),
       ),
-    string: ($) =>
-      choice(
-        seq(
-          '"',
-          repeat(
-            choice($._unescaped_double_string_fragment, $._escape_sequence),
+
+    template_string_fragment: (_) => token.immediate(prec(2, /[^`<\\]+/)),
+    escape: (_) => "\\",
+    template_escape_sequence: (_) =>
+      token.immediate(prec(1, seq("\\", choice("\\", "<", "`")))),
+    template: ($) =>
+      seq(
+        "`",
+        repeat(
+          choice(
+            $._template_dynamic,
+            $.template_string_fragment,
+            $.template_escape_sequence,
           ),
-          '"',
         ),
+        "`",
+      ),
+    string: ($) =>
+      seq(
+        '"',
+        repeat(choice($._unescaped_double_string_fragment, $._escape_sequence)),
+        '"',
       ),
     _atomic_value: ($) =>
       choice(
@@ -230,21 +243,18 @@ module.exports = grammar({
         prec(2, $.null),
         $.number,
         prec(1, $.symbol),
-        $.path,
+        $.template,
       ),
-    path: ($) => seq("!", repeat1(choice($.path_literal, $._path_dynamic))),
-    path_literal: ($) =>
-      prec(4, token.immediate(/[A-Za-z0-9\-\._~:/?#\[\]@!$&'()*+,;=%]+/)),
-    _path_dynamic: ($) =>
+    _template_dynamic: ($) =>
       seq(
-        $.path_open_caret,
+        $.template_open_caret,
         $.dynamic_field_name,
         optional($._type_declaration),
         optional($._example_declaration),
         $.close_caret,
       ),
     dynamic_field_name: ($) => identifier,
-    path_open_caret: ($) => token.immediate("<"),
+    template_open_caret: ($) => token.immediate("<"),
     open_caret: ($) => "<",
     close_caret: ($) => ">",
     close_caret_operator: ($) => ">",

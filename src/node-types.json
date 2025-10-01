@@ -28,15 +28,15 @@
           "named": true
         },
         {
-          "type": "path",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "template",
           "named": true
         },
         {
@@ -138,10 +138,6 @@
           "named": true
         },
         {
-          "type": "path",
-          "named": true
-        },
-        {
           "type": "property_key",
           "named": true
         },
@@ -155,6 +151,10 @@
         },
         {
           "type": "tag",
+          "named": true
+        },
+        {
+          "type": "template",
           "named": true
         },
         {
@@ -189,15 +189,15 @@
           "named": true
         },
         {
-          "type": "path",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "template",
           "named": true
         },
         {
@@ -284,10 +284,6 @@
           "named": true
         },
         {
-          "type": "path",
-          "named": true
-        },
-        {
           "type": "property_key",
           "named": true
         },
@@ -301,6 +297,10 @@
         },
         {
           "type": "tag",
+          "named": true
+        },
+        {
+          "type": "template",
           "named": true
         },
         {
@@ -387,10 +387,6 @@
           "named": true
         },
         {
-          "type": "path",
-          "named": true
-        },
-        {
           "type": "property_key",
           "named": true
         },
@@ -404,6 +400,10 @@
         },
         {
           "type": "tag",
+          "named": true
+        },
+        {
+          "type": "template",
           "named": true
         },
         {
@@ -474,10 +474,6 @@
           "named": true
         },
         {
-          "type": "path",
-          "named": true
-        },
-        {
           "type": "property_key",
           "named": true
         },
@@ -495,6 +491,10 @@
         },
         {
           "type": "tag",
+          "named": true
+        },
+        {
+          "type": "template",
           "named": true
         },
         {
@@ -581,10 +581,6 @@
           "named": true
         },
         {
-          "type": "path",
-          "named": true
-        },
-        {
           "type": "property_key",
           "named": true
         },
@@ -602,6 +598,10 @@
         },
         {
           "type": "tag",
+          "named": true
+        },
+        {
+          "type": "template",
           "named": true
         },
         {
@@ -695,10 +695,6 @@
           "named": true
         },
         {
-          "type": "path",
-          "named": true
-        },
-        {
           "type": "property_key",
           "named": true
         },
@@ -712,6 +708,10 @@
         },
         {
           "type": "tag",
+          "named": true
+        },
+        {
+          "type": "template",
           "named": true
         },
         {
@@ -750,10 +750,6 @@
           "named": true
         },
         {
-          "type": "path",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
@@ -762,83 +758,15 @@
           "named": true
         },
         {
-          "type": "true",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "path",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "array",
-          "named": true
-        },
-        {
-          "type": "close_caret",
-          "named": true
-        },
-        {
-          "type": "dynamic_field_name",
-          "named": true
-        },
-        {
-          "type": "false",
-          "named": true
-        },
-        {
-          "type": "null",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
-          "type": "path",
-          "named": true
-        },
-        {
-          "type": "path_literal",
-          "named": true
-        },
-        {
-          "type": "path_open_caret",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "symbol",
+          "type": "template",
           "named": true
         },
         {
           "type": "true",
           "named": true
-        },
-        {
-          "type": "type",
-          "named": true
         }
       ]
     }
-  },
-  {
-    "type": "path_literal",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "property_key",
@@ -902,10 +830,6 @@
           "named": true
         },
         {
-          "type": "path",
-          "named": true
-        },
-        {
           "type": "property_key",
           "named": true
         },
@@ -923,6 +847,10 @@
         },
         {
           "type": "tag",
+          "named": true
+        },
+        {
+          "type": "template",
           "named": true
         },
         {
@@ -978,6 +906,77 @@
     "type": "tag",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "template",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "close_caret",
+          "named": true
+        },
+        {
+          "type": "dynamic_field_name",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "template",
+          "named": true
+        },
+        {
+          "type": "template_escape_sequence",
+          "named": true
+        },
+        {
+          "type": "template_open_caret",
+          "named": true
+        },
+        {
+          "type": "template_string_fragment",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "type",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "type",
@@ -1070,15 +1069,15 @@
           "named": true
         },
         {
-          "type": "path",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "template",
           "named": true
         },
         {
@@ -1096,10 +1095,6 @@
     "type": "variant_identifier",
     "named": true,
     "fields": {}
-  },
-  {
-    "type": "!",
-    "named": false
   },
   {
     "type": "\"",
@@ -1158,6 +1153,10 @@
     "named": false
   },
   {
+    "type": "`",
+    "named": false
+  },
+  {
     "type": "dedent",
     "named": true
   },
@@ -1190,11 +1189,19 @@
     "named": true
   },
   {
-    "type": "path_open_caret",
+    "type": "right_arrow",
     "named": true
   },
   {
-    "type": "right_arrow",
+    "type": "template_escape_sequence",
+    "named": true
+  },
+  {
+    "type": "template_open_caret",
+    "named": true
+  },
+  {
+    "type": "template_string_fragment",
     "named": true
   },
   {
