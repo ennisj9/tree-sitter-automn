@@ -6,7 +6,6 @@
 (function (identifier) @function)
 (method_function (identifier) @function)
 (return_field (identifier) @variable.special)
-(path (identifier) @variable)
 (atomic_type (identifier) @type)
 (variant_identifier) @variant
 (context_type) @variable.parameter
